@@ -1,0 +1,119 @@
+$project-width: 300px
+$project-margin: 20px
+$projects-row-desktop: 3
+$projects-row-tablet: 2
+$projects-row-mobile: 1
+$project-box-shadow-sizes: 10px 10px 25px
+$projects-width-desktop: ($project-width + $project-margin) * $projects-row-desktop
+$projects-width-tablet: ($project-width + $project-margin) * $projects-row-tablet
+$projects-width-mobile: ($project-width + $project-margin) * $projects-row-mobile
+
+@font-face
+  font-family: "LemonMilk"
+  src: url("../fonts/LEMONMILK-Regular.otf")
+
+html, body
+  margin: 0
+  font-family: LemonMilk, sans-serif
+
+#landing-section
+  width: 100vw
+  margin: 5% 0
+
+  h1
+    margin-bottom: 2.5%
+    font-size: 5vh
+
+.center-items
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+
+.text-centered
+  text-align: center
+
+#projects
+  display: grid
+  grid-column-gap: $project-margin
+
+  width: ($project-width + $project-margin) * $projects-row-mobile
+  grid-template-columns: repeat($projects-row-mobile, 1fr)
+
+  @media screen and (min-width: $projects-width-tablet)
+    width: $projects-width-tablet
+    grid-template-columns: repeat($projects-row-tablet, 1fr)
+
+  @media screen and (min-width: $projects-width-desktop)
+    width: $projects-width-desktop
+    grid-template-columns: repeat($projects-row-desktop, 1fr)
+
+  > div
+    display: flex
+    width: 300px
+    height: 200px
+    box-shadow: lightgray $project-box-shadow-sizes
+    border-radius: 10px
+    flex-direction: column
+    margin-bottom: $project-margin
+
+    .details
+      justify-content: space-between
+      height: 100%
+
+      h4
+        font-weight: bold
+
+      p
+        font-family: sans-serif
+        margin: 10px
+
+    .tech
+      display: flex
+      flex-direction: row
+      justify-content: space-around
+      margin: 0
+
+      span
+        width: 100%
+        padding: 10px
+        text-align: center
+        font-weight: bold
+
+      span:first-child
+        border-bottom-left-radius: 10px
+
+      span:last-child
+        border-bottom-right-radius: 10px
+
+      .cs
+        border-bottom: 5px solid mediumpurple
+
+      .cpp
+        border-bottom: 5px solid dodgerblue
+
+      .rust
+        border-bottom: 5px solid orangered
+
+      .java
+        border-bottom: 5px solid cornflowerblue
+
+      .cli
+        border-bottom: 5px solid black
+
+      .app
+        border-bottom: 5px solid blue
+
+      .addon
+        border-bottom: 5px solid firebrick
+
+  > div:hover
+    box-shadow: darkgrey $project-box-shadow-sizes
+
+a.button, a:link.button, a:visited.button
+  background-color: black
+  color: white
+  text-decoration-line: none
+
+.faded
+  opacity: 0.3

@@ -1,0 +1,4 @@
+# Project exclude paths
+/public/styles/
+/node_modules/
+/.idea/

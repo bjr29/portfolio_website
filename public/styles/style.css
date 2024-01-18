@@ -82,10 +82,6 @@ html, body {
   height: 100%;
 }
 
-#projects > div .details h4 {
-  font-weight: bold;
-}
-
 #projects > div .details p {
   font-family: sans-serif;
   margin: 10px;
@@ -102,7 +98,6 @@ html, body {
   width: 100%;
   padding: 10px;
   text-align: center;
-  font-weight: bold;
 }
 
 #projects > div .tech span:first-child {

@@ -10,13 +10,18 @@ $projects-width-desktop: ($project-width + $project-margin) * $projects-columns-
 
 @font-face
   font-family: "LemonMilk"
-  src:  url("../fonts/LEMONMILK-Regular.otf") format("opentype"),
-        url("../fonts/lemonmilk.ttf") format("truetype"),
-        url("../fonts/LemonMilk.woff2") format("woff2")
+  src: url("../fonts/LemonMilk.otf") format("opentype")
+  src: url("../fonts/LemonMilk.svg") format("svg")
+  src: url("../fonts/LemonMilk.ttf") format("truetype")
+  src: url("../fonts/LemonMilk.woff") format("woff")
+  src: url("../fonts/LemonMilk.woff2") format("woff2")
 
 html, body
   margin: 0
   font-family: LemonMilk, sans-serif
+
+*
+  font-weight: lighter
 
 #landing-section
   width: 100vw

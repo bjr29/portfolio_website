@@ -1,12 +1,12 @@
 $project-width: 300px
 $project-margin: 20px
-$projects-row-desktop: 3
-$projects-row-tablet: 2
-$projects-row-mobile: 1
+$projects-columns-mobile: 1
+$projects-columns-tablet: 2
+$projects-columns-desktop: 3
 $project-box-shadow-sizes: 10px 10px 25px
-$projects-width-desktop: ($project-width + $project-margin) * $projects-row-desktop
-$projects-width-tablet: ($project-width + $project-margin) * $projects-row-tablet
-$projects-width-mobile: ($project-width + $project-margin) * $projects-row-mobile
+$projects-width-mobile: ($project-width + $project-margin) * $projects-columns-mobile
+$projects-width-tablet: ($project-width + $project-margin) * $projects-columns-tablet
+$projects-width-desktop: ($project-width + $project-margin) * $projects-columns-desktop
 
 @font-face
   font-family: "LemonMilk"
@@ -22,7 +22,14 @@ html, body
 
   h1
     margin-bottom: 2.5%
-    font-size: 5vh
+    font-size: 54px
+
+    @media (min-width: $projects-width-tablet)
+      font-size: 64px
+
+  h2
+    margin-bottom: 1.25%
+    font-size: 32px
 
 .center-items
   display: flex
@@ -37,20 +44,24 @@ html, body
   display: grid
   grid-column-gap: $project-margin
 
-  width: ($project-width + $project-margin) * $projects-row-mobile
-  grid-template-columns: repeat($projects-row-mobile, 1fr)
+  width: $projects-width-mobile
+  grid-template-columns: repeat($projects-columns-mobile, 1fr)
 
-  @media screen and (min-width: $projects-width-tablet)
-    width: $projects-width-tablet
-    grid-template-columns: repeat($projects-row-tablet, 1fr)
+  @media (min-width: $projects-width-tablet)
+    width: $projects-width-tablet - $project-margin
+    grid-template-columns: repeat($projects-columns-tablet, 1fr)
 
-  @media screen and (min-width: $projects-width-desktop)
-    width: $projects-width-desktop
-    grid-template-columns: repeat($projects-row-desktop, 1fr)
+  @media (min-width: $projects-width-desktop)
+    width: $projects-width-desktop - $project-margin
+    grid-template-columns: repeat($projects-columns-desktop, 1fr)
 
   > div
+    width: 100%
+
+    @media (min-width: $projects-width-tablet)
+      width: 300px
+
     display: flex
-    width: 300px
     height: 200px
     box-shadow: lightgray $project-box-shadow-sizes
     border-radius: 10px
@@ -123,3 +134,13 @@ a.button, a:link.button, a:visited.button
 
 .faded
   opacity: 0.3
+
+footer
+  width: 100%
+  background-color: black
+  color: white
+  margin: 0
+  padding: 20px 0
+
+  ul
+    list-style-type: none

@@ -15,7 +15,7 @@ html, body {
 
 #landing-section h1 {
   margin-bottom: 2.5%;
-  font-size: 54px;
+  font-size: 48px;
 }
 
 @media (min-width: 640px) {
@@ -169,8 +169,12 @@ footer {
   color: white;
   margin: 0;
   padding: 20px 0;
+  text-align: center;
 }
 
-footer ul {
-  list-style-type: none;
+canvas {
+  z-index: -10;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
